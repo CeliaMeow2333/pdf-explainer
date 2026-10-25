@@ -56,7 +56,7 @@ Three actions, three shortcuts:
 ### Chromium, Edge, Brave, Vivaldi
 
 ```bash
-git clone https://github.com/<you>/pdf-explainer.git
+git clone https://github.com/CeliaMeow2333/pdf-explainer.git
 cd pdf-explainer
 python3 tools/build.py --only chromium
 ```
