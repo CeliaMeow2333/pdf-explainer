@@ -51,9 +51,12 @@ function shortcutChips(shortcut) {
   return parts.map((part) => el("kbd", { class: "pe-chip", text: part }));
 }
 
-export function openSettingsPanel({ settings, onSave }) {
+export function openSettingsPanel({ settings, onSave, focusApiKey = false }) {
   const draft = cloneSettings(settings);
   let recorderCleanup = null;
+  /** Rebuilt on every refresh, so the reference is refreshed too. */
+  let keyInputRef = null;
+  let keyRowRef = null;
 
   const warning = el("div", { class: "pe-warn", hidden: true });
   const modalBody = el("div", { class: "pe-modal-body" });
@@ -260,7 +263,9 @@ export function openSettingsPanel({ settings, onSave }) {
     });
     keyInput.addEventListener("input", () => {
       draft.aiApiKey = keyInput.value;
+      keyInput.classList.remove("pe-attention");
     });
+    keyInputRef = keyInput;
 
     const revealButton = el(
       "button",
@@ -295,6 +300,13 @@ export function openSettingsPanel({ settings, onSave }) {
       row(shortcutRow.label, shortcutButton(shortcutRow)),
     );
 
+    const apiKeyRow = row(
+      "API key",
+      el("div", { class: "pe-input-group" }, [keyInput, revealButton]),
+      draft.aiApiKey ? "Stored locally, sent only to your endpoint" : "Required for AI explain and answer",
+    );
+    keyRowRef = apiKeyRow;
+
     return [
       el("section", { class: "pe-section" }, [
         el("div", { class: "pe-section-title", text: "Languages" }),
@@ -306,7 +318,7 @@ export function openSettingsPanel({ settings, onSave }) {
         row("Platform", platformSelect),
         row("API base URL", baseUrlInput, "Usually ends with /v1"),
         row("Model", modelInput),
-        row("API key", el("div", { class: "pe-input-group" }, [keyInput, revealButton]), "Required for AI explain and answer"),
+        apiKeyRow,
         row("Read images", visionToggle, "Needs a vision capable model"),
       ]),
       el("section", { class: "pe-section" }, [
@@ -404,7 +416,19 @@ export function openSettingsPanel({ settings, onSave }) {
   document.body.append(overlay);
   document.documentElement.setAttribute("data-pe-hotkeys-paused", "");
   document.addEventListener("keydown", onOverlayKeyDown, true);
-  saveButton.focus();
+
+  // Without a key the dialog opens on that field, so the first thing a new
+  // user sees is where their credentials go.
+  if (focusApiKey || !draft.aiApiKey) {
+    requestAnimationFrame(() => {
+      keyInputRef?.classList.add("pe-attention");
+      keyRowRef?.scrollIntoView({ block: "center" });
+      keyInputRef?.focus({ preventScroll: true });
+      keyInputRef?.select();
+    });
+  } else {
+    saveButton.focus();
+  }
 
   return { close };
 }

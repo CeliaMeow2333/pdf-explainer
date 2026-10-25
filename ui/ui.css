@@ -385,6 +385,19 @@
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--pe-accent) 14%, transparent);
 }
 
+/* Draws the eye to the API key field on first run. */
+.pe-input.pe-attention {
+  border-color: var(--pe-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pe-accent) 18%, transparent);
+  animation: pe-attention 1.6s ease-in-out 3;
+}
+
+@keyframes pe-attention {
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--pe-accent) 6%, transparent);
+  }
+}
+
 .pe-input-group {
   position: relative;
   display: flex;
@@ -1177,5 +1190,43 @@
 @keyframes pe-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Narrow windows: stack label and control instead of squeezing them. */
+@media (max-width: 560px) {
+  .pe-overlay {
+    padding: 12px;
+  }
+
+  .pe-modal-header {
+    padding: 18px 18px 12px;
+  }
+
+  .pe-modal-body {
+    padding: 4px 18px 16px;
+  }
+
+  .pe-modal-footer {
+    flex-wrap: wrap;
+    padding: 12px 18px 14px;
+  }
+
+  .pe-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .pe-select,
+  .pe-input,
+  .pe-input-group,
+  .pe-shortcut-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pe-input-group .pe-input {
+    width: 100%;
   }
 }

@@ -21,10 +21,14 @@ export const DEFAULT_SETTINGS = {
   // Never ship a key: the user pastes their own in Settings.
   aiApiKey: "",
   aiVision: true,
+  // Set once the first-run key prompt has been shown, so it does not nag.
+  apiKeyPromptDismissed: false,
   shortcuts: {
-    translate: { mods: ["shift"], code: "KeyT" },
+    // Translate is bound to a lone modifier: it fires on release when no
+    // other key was pressed while it was held.
+    translate: { mods: ["shift"], code: null },
     explain: { mods: ["shift"], code: "KeyE" },
-    answer: { mods: ["shift"], code: "KeyA" },
+    answer: { mods: ["shift"], code: "KeyS" },
   },
 };
 

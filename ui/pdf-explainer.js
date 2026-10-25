@@ -96,11 +96,16 @@ function mountSettingsButton() {
   }
 }
 
-function openSettings() {
+function openSettings({ focusApiKey = false } = {}) {
   openSettingsPanel({
     settings,
+    focusApiKey: focusApiKey || !settings.aiApiKey,
     onSave: async (next) => {
-      settings = await saveSettings(next);
+      // A saved key re-arms the first-run prompt for the day it gets cleared.
+      settings = await saveSettings({
+        ...next,
+        apiKeyPromptDismissed: next.aiApiKey ? false : settings.apiKeyPromptDismissed,
+      });
       showToast("Settings saved");
       refreshSidebarChrome();
     },
@@ -138,7 +143,7 @@ function requireApiKey() {
   if (settings.aiApiKey) {
     return true;
   }
-  openSettings();
+  openSettings({ focusApiKey: true });
   showToast("Add your AI API key in Settings to use this feature.", { tone: "warn" });
   return false;
 }
@@ -325,6 +330,17 @@ async function boot() {
 
   if (params.openSettings) {
     openSettings();
+    return;
+  }
+
+  // First run: ask for the API key straight away, once.
+  if (!settings.aiApiKey && !settings.apiKeyPromptDismissed) {
+    try {
+      settings = await saveSettings({ ...settings, apiKeyPromptDismissed: true });
+    } catch (error) {
+      console.warn("[PDF Explainer] could not remember the key prompt", error);
+    }
+    openSettings({ focusApiKey: true });
   }
 }
 

@@ -16,9 +16,9 @@ Three actions, three shortcuts:
 
 | | Action | Shortcut | What you get |
 | --- | --- | --- | --- |
-| 1 | **Translate** | `Shift` + `T` | A Google Translate card under the selection |
+| 1 | **Translate** | `Shift` (tap and release) | A Google Translate card under the selection |
 | 2 | **AI Explain** | `Shift` + `E` | A sidebar that explains the passage in your language |
-| 3 | **AI Answer** | `Shift` + `A` | The page dims, you drag a rectangle, press ✓, then ask |
+| 3 | **AI Answer** | `Shift` + `S` | The page dims, you drag a rectangle, press ✓, then ask |
 
 <p align="center">
   <img src="docs/screenshot-translate.png" alt="Translation card under the selected text" width="460">
@@ -39,7 +39,7 @@ Three actions, three shortcuts:
   detected source language, and has a copy button.
 - **Explain in your language.** The sidebar streams the answer, keeps a conversation, and lets you
   ask follow-up questions about the same passage.
-- **Ask about pictures.** `Shift` + `A` dims the page; drag a rectangle around a chart, a formula or
+- **Ask about pictures.** `Shift` + `S` dims the page; drag a rectangle around a chart, a formula or
   a paragraph, press ✓, and the cropped pixels (plus whatever text was inside) are sent to the model.
 - **Your provider, your key.** Any OpenAI-compatible endpoint (DeepSeek, OpenAI, OpenRouter,
   Ollama, vLLM, LM Studio…), with an editable base URL and model name.
@@ -104,6 +104,14 @@ Click the gear at the right end of the PDF.js toolbar. You can set:
 
 The dialog dims the page behind it, so you never lose your place.
 
+The first time you open a PDF without a key configured, the dialog opens by itself with the
+**API key** field focused — dismiss it and it will not ask again. (It re-appears only if you save a
+key and later clear it.)
+
+Default shortcuts are `Shift` for translation — a lone modifier, triggered on release — plus
+`Shift` + `E` for explain and `Shift` + `S` for answer. Since `Shift` on its own translates, it also
+fires after a shift-click selection; record another combination if you find that too eager.
+
 If a model rejects images, PDF Explainer automatically retries with the text it found inside the
 selection and tells you why — so "Read images" can stay on.
 
@@ -120,8 +128,8 @@ Append `#pdf-explainer=off` to a PDF URL to keep the browser's native viewer for
 
 ## Configuration
 
-PDF Explainer ships **without any credentials**. The first time you press an AI shortcut it opens
-Settings and asks for a key.
+PDF Explainer ships **without any credentials**. Opening your first PDF (or pressing an AI
+shortcut) opens Settings on the API key field so you can paste one.
 
 | Field | Default |
 | --- | --- |
