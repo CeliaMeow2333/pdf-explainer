@@ -1,0 +1,16 @@
+# Build output
+dist/
+web-ext-artifacts/
+*.xpi
+*.crx
+*.pem
+
+# Design notes and references (private)
+plan/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.vscode/

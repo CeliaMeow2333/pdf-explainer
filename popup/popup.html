@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PDF Explainer</title>
+    <link rel="stylesheet" href="../ui/ui.css" />
+    <style>
+      body {
+        width: 320px;
+        margin: 0;
+        padding: 16px 16px 14px;
+        background: var(--pe-bg);
+        color: var(--pe-fg);
+        font-family: var(--pe-font);
+        font-size: 13px;
+      }
+
+      .pe-popup-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .pe-popup-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 7px;
+        background: var(--pe-accent);
+        color: var(--pe-accent-fg);
+      }
+
+      .pe-popup-title {
+        font-size: 13.5px;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+      }
+
+      .pe-popup-sub {
+        font-size: 11px;
+        color: var(--pe-fg-faint);
+      }
+
+      .pe-popup-label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--pe-fg-faint);
+      }
+
+      .pe-popup-row {
+        display: flex;
+        gap: 6px;
+      }
+
+      .pe-popup-row .pe-input {
+        width: auto;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .pe-popup-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid var(--pe-line);
+      }
+
+      .pe-popup-actions .pe-btn {
+        justify-content: flex-start;
+        height: 32px;
+      }
+
+      .pe-popup-note {
+        margin: 12px 0 0;
+        font-size: 11px;
+        line-height: 1.55;
+        color: var(--pe-fg-dim);
+      }
+
+      .pe-popup-hint {
+        min-height: 15px;
+        margin-top: 6px;
+        font-size: 11px;
+        color: var(--pe-danger);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pe-popup-head">
+      <span class="pe-popup-mark" id="pePopupMark"></span>
+      <div>
+        <div class="pe-popup-title">PDF Explainer</div>
+        <div class="pe-popup-sub">Translate &amp; explain any PDF</div>
+      </div>
+    </div>
+
+    <label class="pe-popup-label" for="peUrlInput">Open a PDF by URL</label>
+    <div class="pe-popup-row">
+      <input id="peUrlInput" class="pe-input" type="text" spellcheck="false" placeholder="https://example.com/file.pdf" />
+      <button id="peOpenUrl" class="pe-btn pe-btn-primary" type="button">Open</button>
+    </div>
+    <div class="pe-popup-hint" id="peHint"></div>
+
+    <div class="pe-popup-actions">
+      <button id="peOpenSettings" class="pe-btn pe-btn-ghost" type="button">Settings…</button>
+      <button id="peOpenSample" class="pe-btn pe-btn-ghost" type="button">Open the sample PDF</button>
+    </div>
+
+    <p class="pe-popup-note">
+      PDFs you open in the browser are handed over automatically. Select text in the
+      viewer, then press your shortcut to translate or explain it.
+    </p>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

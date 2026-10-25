@@ -1,0 +1,86 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 8 0 R >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 1687 >>
+stream
+BT
+//F2 26 Tf 1 0 0 1 64 744 Tm (PDF Explainer) Tj
+//F1 12 Tf 1 0 0 1 64 684 Tm (A sample document for testing translation and AI explanations) Tj
+//F2 15 Tf 1 0 0 1 64 634 Tm (1 Scope) Tj
+//F1 11 Tf 1 0 0 1 64 588 Tm (This document describes the reference behaviour of the PDF Explainer extension. It) Tj
+//F1 11 Tf 1 0 0 1 64 572 Tm (exists only so that the viewer, the translation popup and the AI sidebar can be) Tj
+//F1 11 Tf 1 0 0 1 64 556 Tm (exercised with real, selectable text.) Tj
+//F1 11 Tf 1 0 0 1 64 518 Tm (The extension opens every PDF in a bundled PDF.js viewer. When the reader selects a) Tj
+//F1 11 Tf 1 0 0 1 64 502 Tm (passage and presses the configured shortcut, the selection is either translated by) Tj
+//F1 11 Tf 1 0 0 1 64 486 Tm (Google Translate or handed to a large language model for an explanation.) Tj
+//F2 15 Tf 1 0 0 1 64 440 Tm (2 Normative references) Tj
+//F1 11 Tf 1 0 0 1 64 394 Tm (Les documents suivants sont indispensables pour l'application du présent document.) Tj
+//F1 11 Tf 1 0 0 1 64 378 Tm (Pour les références datées, seule l'édition citée s'applique. Pour les références) Tj
+//F1 11 Tf 1 0 0 1 64 362 Tm (non datées, la dernière édition du document de référence s'applique.) Tj
+//F2 15 Tf 1 0 0 1 64 316 Tm (3 Terms and definitions) Tj
+//F1 11 Tf 1 0 0 1 64 270 Tm (3.1 selection — the range of text or the rectangular region of a page that the) Tj
+//F1 11 Tf 1 0 0 1 64 254 Tm (reader has highlighted before invoking an action.) Tj
+//F1 11 Tf 1 0 0 1 64 216 Tm (3.2 explanation — a short, plain-language account of what a passage means, including) Tj
+//F1 11 Tf 1 0 0 1 64 200 Tm (the sense of any specialised terminology it uses.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 1772 >>
+stream
+BT
+//F2 15 Tf 1 0 0 1 64 754 Tm (4 Conformance) Tj
+//F1 11 Tf 1 0 0 1 64 708 Tm (An implementation conforms to this document if it satisfies every requirement stated) Tj
+//F1 11 Tf 1 0 0 1 64 692 Tm (in the following clauses. Conformance is assessed against the observable behaviour) Tj
+//F1 11 Tf 1 0 0 1 64 676 Tm (of the viewer, not against its internal design.) Tj
+//F1 11 Tf 1 0 0 1 64 638 Tm (The key words "shall", "should" and "may" are to be interpreted as described in the) Tj
+//F1 11 Tf 1 0 0 1 64 622 Tm (editorial rules of the directives. A conforming implementation shall not alter the) Tj
+//F1 11 Tf 1 0 0 1 64 606 Tm (contents of the document it renders.) Tj
+//F2 15 Tf 1 0 0 1 64 560 Tm (5 Environment) Tj
+//F1 11 Tf 1 0 0 1 64 514 Tm (The viewer is expected to run in a browser tab with a viewport of at least 1024 CSS) Tj
+//F1 11 Tf 1 0 0 1 64 498 Tm (pixels. Network access is required for the translation service and for the language) Tj
+//F1 11 Tf 1 0 0 1 64 482 Tm (model endpoint.) Tj
+//F1 11 Tf 1 0 0 1 64 444 Tm (All rendering happens locally. The only data leaving the machine are the passages or) Tj
+//F1 11 Tf 1 0 0 1 64 428 Tm (regions that the reader explicitly submits, together with the configured credentials) Tj
+//F1 11 Tf 1 0 0 1 64 412 Tm (of the language model provider.) Tj
+//F2 15 Tf 1 0 0 1 64 366 Tm (6 Language) Tj
+//F1 11 Tf 1 0 0 1 64 320 Tm (Documents written in a language the reader does not speak are the primary use case.) Tj
+//F1 11 Tf 1 0 0 1 64 304 Tm (Selecting a sentence and pressing the translation shortcut shows a compact card with) Tj
+//F1 11 Tf 1 0 0 1 64 288 Tm (the translated text; pressing the explanation shortcut instead opens a sidebar that) Tj
+//F1 11 Tf 1 0 0 1 64 272 Tm (discusses the passage.) Tj
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000393 00000 n 
+0000000490 00000 n 
+0000000592 00000 n 
+0000002331 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+4155
+%%EOF

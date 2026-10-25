@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "PDF Explainer",
+  "version": "1.0.0",
+  "description": "Read foreign or complex PDFs with built-in Google Translate and AI explanations, inside a PDF.js viewer.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pdf-explainer@example.org",
+      "strict_min_version": "115.0"
+    }
+  },
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "background/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "PDF Explainer",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "48": "icons/icon.svg",
+      "96": "icons/icon.svg"
+    },
+    "theme_icons": [
+      {
+        "light": "icons/icon.svg",
+        "dark": "icons/icon-light.svg",
+        "size": 16
+      },
+      {
+        "light": "icons/icon.svg",
+        "dark": "icons/icon-light.svg",
+        "size": 32
+      }
+    ]
+  },
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "web_accessible_resources": [
+    "pdfjs/web/viewer.html"
+  ],
+  "content_security_policy": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+}
