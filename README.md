@@ -53,6 +53,8 @@ Three actions, three shortcuts:
 
 ## Install
 
+The .zip file is now uploaded in [Releases](https://github.com/CeliaMeow2333/pdf-explainer/releases)
+
 ### Chromium, Edge, Brave, Vivaldi
 
 ```bash
