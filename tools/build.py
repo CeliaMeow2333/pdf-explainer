@@ -66,6 +66,10 @@ def build_variant(name: str) -> str:
 
     shutil.copy2(os.path.join(ROOT, variant["manifest"]), os.path.join(out, "manifest.json"))
 
+    # Apache-2.0 requires the license (and notices) to travel with the build.
+    for name_in_root in ("LICENSE", "NOTICE"):
+        shutil.copy2(os.path.join(ROOT, name_in_root), os.path.join(out, name_in_root))
+
     # Only the background script / icons that this browser actually uses.
     background_dir = os.path.join(out, "background")
     os.makedirs(background_dir, exist_ok=True)

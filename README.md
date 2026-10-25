@@ -4,7 +4,7 @@
 with a [PDF.js](https://github.com/mozilla/pdf.js) one that can translate a passage, explain it with
 an LLM, or answer questions about any region of the page — text or figures.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-black.svg)](LICENSE)
 [![Manifest](https://img.shields.io/badge/manifest-v2%20%2F%20v3-black.svg)](#install)
 [![No build step](https://img.shields.io/badge/build-none-black.svg)](#development)
 
@@ -265,7 +265,10 @@ settings dialog directly.
 
 ## License
 
-[MIT](LICENSE) for the extension code. The bundled [PDF.js](https://github.com/mozilla/pdf.js) is
-distributed under the Apache License 2.0 — see `pdfjs/LICENSE`.
+Licensed under the [Apache License, Version 2.0](LICENSE). Attribution details are in
+[NOTICE](NOTICE).
+
+The bundled [PDF.js](https://github.com/mozilla/pdf.js) is distributed under the same license — see
+`pdfjs/LICENSE`.
 
 PDF Explainer is an independent project and is not affiliated with Mozilla.
